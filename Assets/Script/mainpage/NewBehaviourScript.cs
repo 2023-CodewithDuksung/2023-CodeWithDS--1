@@ -19,6 +19,6 @@ public class NewBehaviourScript : MonoBehaviour
     }
     void GotoMain()
     {
-        SceneManager.LoadScene("MainTutorial");
+        SceneManager.LoadScene("Explain Panel");
     }
 }
