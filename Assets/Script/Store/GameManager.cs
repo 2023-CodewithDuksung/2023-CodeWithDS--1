@@ -39,6 +39,8 @@ public class GameManager : MonoBehaviour
     public Sprite TabIdleSprite, TabSelectSprite;
     public Sprite[] ItemSprite, WearingItem; // item slot image
     string filePath;
+    public static int coinAmount=1000;
+    public Text cointext;
 
 
     void Start()
@@ -54,6 +56,8 @@ public class GameManager : MonoBehaviour
         filePath = Application.persistentDataPath + "/MyItemText.txt";
         Load();
         Base.sprite = WearingItem[MyItemList.FindIndex(x => x.isUsing)];
+
+        cointext.text = coinAmount.ToString("F2");
     }
 
 
@@ -90,10 +94,17 @@ public class GameManager : MonoBehaviour
         if (curType == "Store") // 상점에 있는 아이템만 
         {
             CurItem.myItem = true; // 여기에 돈이 얼마나 있는지 if문 추가
+            coinAmount -= 500;
+            Debug.Log(coinAmount);
+            UpdateCoinUI();
+
         }
         Save();
     }
-
+    private void UpdateCoinUI()
+    {
+        cointext.text = coinAmount.ToString(); // UI 요소에 변경된 코인 수 반영
+    }
 
 
     public void TabClick(string tabName)
