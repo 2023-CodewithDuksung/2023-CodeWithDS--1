@@ -21,4 +21,12 @@ public class GoToScene : MonoBehaviour
     {
         SceneManager.LoadScene("Mealpage");
     }
+    public void GotoTimetable()
+    {
+        SceneManager.LoadScene("Timetable");
+    }
+    public void GotoStore()
+    {
+        SceneManager.LoadScene("Store");
+    }
 }
