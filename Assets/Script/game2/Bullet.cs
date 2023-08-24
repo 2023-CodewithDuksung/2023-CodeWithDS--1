@@ -1,3 +1,53 @@
+//using System.Collections;
+//using System.Collections.Generic;
+//using UnityEngine;
+
+//public class Bullet : MonoBehaviour
+//{
+//    public float moveSpeed = 0.01f;
+//    public GameObject explosion;
+
+//    GameObject Coin;
+
+//    // Start is called before the first frame update
+//    void Start()
+//    {
+
+//    }
+
+//    // Update is called once per frame
+//    void Update()
+//    {
+//        //Y??????
+//        transform.Translate(0, moveSpeed * Time.deltaTime, 0);
+//        Destroy(gameObject, 10f);
+//    }
+
+//    private void OnTriggerEnter2D(Collider2D collision)
+//    {
+//        if(collision.gameObject.tag == "Enemy")
+//        {
+//            //???? ?????? ????
+//            Instantiate(explosion, transform.position, Quaternion.identity);
+
+//            Destroy(collision.gameObject);
+//            Destroy(gameObject);
+
+//            int currentCoin = PlayerPrefs.GetInt("Coin", 0);
+//            currentCoin += 10;
+//            PlayerPrefs.SetInt("Coin", currentCoin);
+
+//        }
+//    }
+
+//    //?????????? ?????? ????
+//    private void OnBecameInvisible()
+//    {
+//        //?????? ???? ?????? ?????? ??
+//        Destroy(gameObject);
+//    }
+//}
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,37 +56,39 @@ public class Bullet : MonoBehaviour
 {
     public float moveSpeed = 0.01f;
     public GameObject explosion;
+    public GameObject coinPrefab;
 
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
     void Update()
     {
-        //Y축이동
         transform.Translate(0, moveSpeed * Time.deltaTime, 0);
         Destroy(gameObject, 10f);
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.gameObject.tag == "Enemy")
+        if (collision.gameObject.tag == "Enemy")
         {
-            //폭발 이벤트 생성
             Instantiate(explosion, transform.position, Quaternion.identity);
 
             Destroy(collision.gameObject);
             Destroy(gameObject);
+
+            //int currentCoin = PlayerPrefs.GetInt("Coin", 0);
+            //currentCoin += 10;
+            //PlayerPrefs.SetInt("Coin", currentCoin);
+
+            DropCoin();
         }
     }
 
-    //화면밖으로 나가면 호출
     private void OnBecameInvisible()
     {
-        //미사일 화면 밖으로 나갔을 때
         Destroy(gameObject);
+    }
+
+    private void DropCoin()
+    {
+        GameObject coin = Instantiate(coinPrefab, transform.position, Quaternion.identity);
+        coin.GetComponent<Rigidbody2D>().velocity = new Vector2(Random.Range(-1f, 1f), 2f);
     }
 }

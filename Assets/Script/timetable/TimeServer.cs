@@ -83,13 +83,13 @@ public class TimeServer : MonoBehaviour
 
             int stopwatch = (int)timestamp.TotalSeconds - PlayerPrefs.GetInt("net", (int)timestamp.TotalSeconds);
 
-            Debug.Log("시간:" + dateTime.ToString());
+            //Debug.Log("시간:" + dateTime.ToString());
             // Debug.Log(stopwatch+"sec");
             PlayerPrefs.SetInt("net", (int)timestamp.TotalSeconds);
 
             // Update UI text directly
             timeText.text = dateTime.ToString();  // Update the UI text with the new time
-            Debug.Log("시간 정보 가져옴: " + dateTime.ToString());
+            //Debug.Log("시간 정보 가져옴: " + dateTime.ToString());
 
           
 
