@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class ExplainPanel : MonoBehaviour
 {
@@ -21,8 +23,18 @@ public class ExplainPanel : MonoBehaviour
     {
         switch (i)
         {
-          /*  case 0: tabNum = 0; break;
-            case "Bag": tabNum = 1; break;*/
+            case 0: 
+                ExpPanel[i].SetActive(false);
+                ExpPanel[i + 1].SetActive(true);
+                break;
+            case 1:
+                ExpPanel[i].SetActive(false);
+                ExpPanel[i + 1].SetActive(true);
+                break;
+            case 2:
+                ExpPanel[i].SetActive(false);
+                SceneManager.LoadScene("MainPage");
+                break;
         }
     }
 }
