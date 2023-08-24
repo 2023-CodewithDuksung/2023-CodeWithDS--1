@@ -490,7 +490,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 16
+  m_RootOrder: 17
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &181935347
 GameObject:
@@ -509,7 +509,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
-
 --- !u!212 &181935349
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -698,6 +697,10 @@ MonoBehaviour:
   spawnPointsleep: {fileID: 499872635}
   spawnPointrelax: {fileID: 90321986}
   spawnPointmeal: {fileID: 1623435546}
+  textstudy: {fileID: 2110117647}
+  textsleep: {fileID: 1530445520}
+  textrelax: {fileID: 1459718965}
+  textmeal: {fileID: 95635480}
   yOffset: 0.4
   spawnInterval: 2
 --- !u!4 &249408425
@@ -1387,7 +1390,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 15
+  m_RootOrder: 16
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1398720217
 GameObject:
@@ -1471,7 +1474,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 14
+  m_RootOrder: 15
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1459718962
 GameObject:
@@ -1883,7 +1886,7 @@ Transform:
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 13
+  m_RootOrder: 14
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1683243676
 GameObject:
