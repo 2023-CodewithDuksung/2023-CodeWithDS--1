@@ -288,9 +288,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1c1f18a5fc95ec84eb569d00b4ee65d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
+  player: {fileID: 1235855243}
   smoothing: 0.2
-  minCameraBoundary: {x: 0, y: 0}
+  minCameraBoundary: {x: -13, y: 0}
   maxCameraBoundary: {x: 0, y: 0}
 --- !u!1 &802987011
 GameObject:
@@ -350,7 +350,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 2a35b3f2fbdb5984f8d44b5b501b2926, type: 3}
+  m_Sprite: {fileID: 21300000, guid: be6d41bc71935164f902f0f285229af2, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -369,8 +369,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 802987011}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.7328, y: 0.2748, z: 0}
-  m_LocalScale: {x: 0.7, y: 0.7, z: 1}
+  m_LocalPosition: {x: -6.73, y: 0.01, z: 0}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -610,7 +610,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1235855241}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.05, y: -0.23, z: 0}
+  m_LocalPosition: {x: -0.55, y: -2.65, z: 0}
   m_LocalScale: {x: 0.7, y: 0.7, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -828,7 +828,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  fcounttime: 0
+  counttimeStudy: 0
   sprites:
   - {fileID: 21300000, guid: 2239bc257b1edec429483b723a4f4247, type: 3}
   - {fileID: 21300000, guid: c79deea1a6eac0f46b509dfafc1df66d, type: 3}
