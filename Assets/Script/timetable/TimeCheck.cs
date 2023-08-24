@@ -21,8 +21,16 @@ public class TimeCheck : MonoBehaviour
     */
     public GameObject objectPrefab1; // 생성할 물체 프리팹
     public GameObject objectPrefab2;
+    public GameObject objectPrefab3;
+    public GameObject objectPrefab4;
     public Transform spawnPointstudy;
     public Transform spawnPointsleep;// 물체가 생성될 위치
+    public Transform spawnPointrelax;
+    public Transform spawnPointmeal;
+    public Text textstudy;
+    public Text textsleep;
+    public Text textrelax;
+    public Text textmeal;
     public float yOffset = 0.4f;
     public float spawnInterval = 2.0f;
     // Start is called before the first frame update
@@ -33,29 +41,55 @@ public class TimeCheck : MonoBehaviour
         //finishButton.onClick.AddListener(StopTimingAndSpawnObjects);
         //spawnPosition = new Vector2(-1.0f, -3.0f); // 초기 위치 설정
 
-        float loadedTimestudy = PlayerPrefs.GetFloat("FCountTimeStudy");
-        float loadedTimesleep = PlayerPrefs.GetFloat("FCountTimeSleep");
+        float loadedTimestudy = PlayerPrefs.GetFloat("CounttimeStudy");
+        float loadedTimesleep = PlayerPrefs.GetFloat("CounttimeSleep");
+        float loadedTimerelax = PlayerPrefs.GetFloat("CounttimeRelax");
+        Debug.Log(loadedTimerelax);
+        float loadedTimemeal = PlayerPrefs.GetFloat("CounttimeMeal");
 
         // 시간 값을 정수로 변환하여 물체 생성 개수 결정
         int numberOfObjectstudy = Mathf.FloorToInt(loadedTimestudy/spawnInterval);
         int numberOfObjectsleep = Mathf.FloorToInt(loadedTimesleep / spawnInterval);
+        int numberOfObjectrelax = Mathf.FloorToInt(loadedTimerelax / spawnInterval);
+        int numberOfObjectmeal = Mathf.FloorToInt(loadedTimemeal / spawnInterval);
 
+//        Debug.Log(loadedTimerelax);
+       
         Debug.Log(numberOfObjectstudy);
+        Debug.Log(numberOfObjectsleep);
+        Debug.Log(numberOfObjectrelax);
+        Debug.Log(numberOfObjectmeal);
+       
 
         // 정수 값에 따라 물체 생성
         for (int i = 0; i < numberOfObjectstudy; i++)
         {
             Vector2 spawnPosition = spawnPointstudy.position + new Vector3(0f, i * yOffset, 0f);
             Instantiate(objectPrefab1, spawnPosition, Quaternion.identity);
+            textstudy.text = loadedTimestudy.ToString("F2");
         }
         for (int i = 0; i < numberOfObjectsleep; i++)
         {
             Vector2 spawnPosition = spawnPointsleep.position + new Vector3(0f, i * yOffset, 0f);
             Instantiate(objectPrefab2, spawnPosition, Quaternion.identity);
+            textsleep.text = loadedTimesleep.ToString("F2");
+        }
+        
+        for (int i = 0; i < numberOfObjectrelax; i++)
+        {
+            Vector2 spawnPosition = spawnPointrelax.position + new Vector3(0f, i * yOffset, 0f);
+            Instantiate(objectPrefab3, spawnPosition, Quaternion.identity);
+            textrelax.text = loadedTimerelax.ToString("F2");
+        }
+        for (int i = 0; i < numberOfObjectmeal; i++)
+        {
+            Vector2 spawnPosition = spawnPointmeal.position + new Vector3(0f, i * yOffset, 0f);
+            Instantiate(objectPrefab4, spawnPosition, Quaternion.identity);
+            textmeal.text = loadedTimemeal.ToString("F2");
         }
 
-        Debug.Log("Loaded Time: " + loadedTimestudy);
-        Debug.Log("Number of objects: " + numberOfObjectstudy);
+        //Debug.Log("Loaded Time: " + loadedTimestudy);
+        //Debug.Log("Number of objects: " + numberOfObjectstudy);
 
 
     }

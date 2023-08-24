@@ -45,6 +45,7 @@ public class CountTimeSleep : MonoBehaviour
         GameObject.Find("Timerbutton").GetComponent<Image>().sprite = sprites[0];
         counttimeSleep = time;
         Debug.Log(counttimeSleep);
+        PlayerPrefs.SetFloat("CounttimeSleep", counttimeSleep);
         btn_active = false;
     }
     private void Update() // 바뀌는 시간을 text에 반영 해 줄 update 생명주기

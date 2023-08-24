@@ -45,6 +45,7 @@ public class CountTimeStudy : MonoBehaviour
         GameObject.Find("Timerbutton").GetComponent<Image>().sprite = sprites[0];
         counttimeStudy = time;
         Debug.Log(counttimeStudy);
+        PlayerPrefs.SetFloat("CounttimeStudy", counttimeStudy);
         btn_active = false;
     }
     private void Update() // 바뀌는 시간을 text에 반영 해 줄 update 생명주기
