@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class playerController : MonoBehaviour
 {
@@ -15,6 +16,8 @@ public class playerController : MonoBehaviour
 
     public Button jumpButton; // UI 점프 버튼
     public Button slideButton;
+
+    public static float coinAmount;
 
     void Start()
     {
@@ -96,12 +99,30 @@ public class playerController : MonoBehaviour
         animator.SetBool("playerRun", true); // playerRun 애니메이션 상태를 다시 true로 설정
     }
 
-    void OnTriggerEnter2D(Collider2D other)
+    void OnTriggerEnter2D(Collider2D collision)
     {
-        if (other.CompareTag("Obstacle"))
+        if (collision.gameObject.tag == "Obstacle")
         {
             Debug.Log("충돌");
-            animator.SetBool("playerRun", false);
+            LoadNextScene();
         }
+
+        if (collision.gameObject.tag == "Coin")
+        {
+            Destroy(collision.gameObject);
+
+            coinAmount += 1.0f;
+            Debug.Log(coinAmount);
+            PlayerPrefs.SetFloat("Coin", coinAmount);
+        }
+    }
+
+    public void LoadNextScene()
+    {
+        // 다음 씬의 이름을 여기에 입력합니다.
+        string nextSceneName = "MiniGame1Over";
+
+        // 다음 씬으로 전환합니다.
+        SceneManager.LoadScene(nextSceneName);
     }
 }
