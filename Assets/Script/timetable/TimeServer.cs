@@ -22,6 +22,8 @@ public class TimeServer : MonoBehaviour
         PlayerPrefs.SetInt("sec", (int)timestamp.TotalSeconds);
         Debug.Log(((int)timestamp.TotalSeconds - past));
         */
+        //float loadedTimerelax = PlayerPrefs.GetFloat("CounttimeRelax");
+        //Debug.Log(loadedTimerelax);
 
         StartCoroutine(WebChk());
     }
@@ -81,7 +83,7 @@ public class TimeServer : MonoBehaviour
             DateTime dateTime = DateTime.Parse(date).ToLocalTime();
             TimeSpan timestamp = dateTime - new DateTime(1970, 1, 1, 0, 0, 0);
 
-            int stopwatch = (int)timestamp.TotalSeconds - PlayerPrefs.GetInt("net", (int)timestamp.TotalSeconds);
+            //int stopwatch = (int)timestamp.TotalSeconds - PlayerPrefs.GetInt("net", (int)timestamp.TotalSeconds);
 
             //Debug.Log("시간:" + dateTime.ToString());
             // Debug.Log(stopwatch+"sec");
