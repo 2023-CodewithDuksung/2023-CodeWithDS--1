@@ -2,12 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-public class CountTime : MonoBehaviour
+public class CountTimeStudy : MonoBehaviour
 {
     bool btn_active; //버튼이 활성화 상태인지 검사.
     public Text[] text_time; // 시간을 표시할 text
     float time; // 시간.
-    public float fcounttime;// 시간 누적을 위해서 저장하는 곳
+    public float counttimeStudy;// 시간 누적을 위해서 저장하는 곳
     public Sprite[] sprites;
     //public Animator animator;
     private void Start()
@@ -36,8 +36,8 @@ public class CountTime : MonoBehaviour
     { // 버튼 비활성화 메소드
         //animator.SetBool("timeron", false);
         GameObject.Find("Timerbutton").GetComponent<Image>().sprite = sprites[0];
-        fcounttime = time;
-        Debug.Log(fcounttime);
+        counttimeStudy = time;
+        Debug.Log(counttimeStudy);
         btn_active = false;
     }
     private void Update() // 바뀌는 시간을 text에 반영 해 줄 update 생명주기
