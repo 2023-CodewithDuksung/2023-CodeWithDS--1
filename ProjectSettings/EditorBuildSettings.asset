@@ -33,8 +33,10 @@ EditorBuildSettings:
     path: Assets/Scenes/MainPage.unity
     guid: e8ac52d82c837894e901724b271a9f39
   - enabled: 1
+
     path: Assets/Scenes/TimeCheck.unity
     guid: 01b1864c481474af9af022e98fbe4fd6
+
   - enabled: 1
     path: Assets/Scenes/Relaxpage.unity
     guid: 861f6dd3d6d872d41887d97de308e8a3
