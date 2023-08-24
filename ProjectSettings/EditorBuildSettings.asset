@@ -29,10 +29,16 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MiniGame2Over.unity
     guid: 638d3cd2b970845d3ac7441a01ca465a
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
+  - enabled: 0
+    path: 
+    guid: 00000000000000000000000000000000
   - enabled: 1
-
-    path: Assets/Scenes/Mainpage 1.unity
-    guid: 1717721e413dd9f4abb611b3493f5ed5
-
-  m_configObjects:
-    com.unity.adaptiveperformance.simulator.provider_settings: {fileID: 11400000, guid: 2267b65072d54f34b9083077bdb5e976, type: 2}
+    path: Assets/Scenes/Sleeppage.unity
+    guid: 12956cf63e76ce24498b448adb72e8fd
+  - enabled: 1
+    path: Assets/Scenes/MainPage.unity
+    guid: e8ac52d82c837894e901724b271a9f39
+  m_configObjects: {}

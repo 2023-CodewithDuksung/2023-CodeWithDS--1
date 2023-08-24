@@ -33,14 +33,17 @@ public class TimeCheck : MonoBehaviour
         //finishButton.onClick.AddListener(StopTimingAndSpawnObjects);
         //spawnPosition = new Vector2(-1.0f, -3.0f); // 초기 위치 설정
 
-        float loadedTimestudy = PlayerPrefs.GetFloat("FCountTimeStudy");
-        float loadedTimesleep = PlayerPrefs.GetFloat("FCountTimeSleep");
+        float loadedTimestudy = PlayerPrefs.GetFloat("CounttimeStudy");
+        float loadedTimesleep = PlayerPrefs.GetFloat("CounttimeSleep");
+        //float loadedTimerelax = PlayerPrefs.GetFloat("CounttimeRelax");
+        //float loadedTimemeal = PlayerPrefs.GetFloat("CounttimeMeal");
 
         // 시간 값을 정수로 변환하여 물체 생성 개수 결정
         int numberOfObjectstudy = Mathf.FloorToInt(loadedTimestudy/spawnInterval);
         int numberOfObjectsleep = Mathf.FloorToInt(loadedTimesleep / spawnInterval);
 
         Debug.Log(numberOfObjectstudy);
+        Debug.Log(numberOfObjectsleep);
 
         // 정수 값에 따라 물체 생성
         for (int i = 0; i < numberOfObjectstudy; i++)
