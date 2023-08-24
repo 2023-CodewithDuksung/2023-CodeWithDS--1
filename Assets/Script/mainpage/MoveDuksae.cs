@@ -5,11 +5,11 @@ using UnityEngine;
 public class MoveDuksae : MonoBehaviour
 {
     Vector2 MousePosition;
-    Camera camera;
+    Camera Dcamera;
     // Start is called before the first frame update
     void Start()
     {
-        camera = GameObject.Find("Main Camera").GetComponent<Camera>();
+        Dcamera = GameObject.Find("Main Camera").GetComponent<Camera>();
     }
 
     // Update is called once per frame
@@ -18,8 +18,9 @@ public class MoveDuksae : MonoBehaviour
         if (Input.GetMouseButtonDown(0))
         {
             MousePosition = Input.mousePosition;
-            MousePosition = camera.ScreenToWorldPoint(MousePosition);
-
+            MousePosition = Dcamera.ScreenToWorldPoint(MousePosition);
+            MousePosition.x = MousePosition.x -1.5f;
+            MousePosition.y = MousePosition.y -1.5f;
             transform.position = MousePosition;
 
         }
