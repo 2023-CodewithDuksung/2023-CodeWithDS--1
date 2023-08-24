@@ -35,8 +35,9 @@ public class GameManager : MonoBehaviour
     public string curType = "Store";
     public GameObject[] Slot, UsingImage, BuyButton;
     public Image[] TabImage, ItemImage;
+    public Image Base;
     public Sprite TabIdleSprite, TabSelectSprite;
-    public Sprite[] ItemSprite; // item slot image
+    public Sprite[] ItemSprite, WearingItem; // item slot image
     string filePath;
 
 
@@ -52,6 +53,7 @@ public class GameManager : MonoBehaviour
         }
         filePath = Application.persistentDataPath + "/MyItemText.txt";
         Load();
+        Base.sprite = WearingItem[MyItemList.FindIndex(x => x.isUsing)];
     }
 
 
@@ -67,8 +69,9 @@ public class GameManager : MonoBehaviour
     // 아이템 착용 (item slot 클릭시)
     public void SlotClick(int slotNum)
     {
-        Item CurItem = CurItemList[slotNum];
-        Item UsingItem = CurItemList.Find(x => x.isUsing == true);
+        Item CurItem = CurItemList[slotNum]; //선택한 아이템 
+        Item UsingItem = CurItemList.Find(x => x.isUsing == true); //지금 사용중인 아이템
+        Base.sprite = WearingItem[AllItemList.FindIndex(x => x.Name == CurItemList[slotNum].Name)];
 
         if (curType == "Bag") // 가방에 있는 아이템만 착용
         {
@@ -95,6 +98,7 @@ public class GameManager : MonoBehaviour
 
     public void TabClick(string tabName)
     {
+        //Base.sprite = WearingItem[MyItemList.FindIndex(x => x.isUsing)]; //이거때문에 위에 73줄 실행 안됨아아아ㅏ아ㅏ아아ㅏ아아아ㅏ앙야ㅑㅐㅑㅑㅑㅑㅑㅑㅑㅑ
         // 상점, 가방 버튼
         curType = tabName;
         if (curType == "Store")
