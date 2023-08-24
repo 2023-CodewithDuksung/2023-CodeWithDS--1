@@ -33,7 +33,7 @@ public class ExplainPanel : MonoBehaviour
                 break;
             case 2:
                 ExpPanel[i].SetActive(false);
-                SceneManager.LoadScene("MainPage");
+                SceneManager.LoadScene("MainPage 0");
                 break;
         }
     }
