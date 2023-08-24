@@ -9,4 +9,8 @@ public class GoToTimetable : MonoBehaviour
     {
         SceneManager.LoadScene("Timetable");
     }
+    public void GotoSleep()
+    {
+        SceneManager.LoadScene("Sleeppage");
+    }
 }
