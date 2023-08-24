@@ -4,7 +4,13 @@
 TagManager:
   serializedVersion: 2
   tags:
+
   - Obstacle
+
+  - Enemy
+  - Stone
+  - Coin
+
   layers:
   - Default
   - TransparentFX

@@ -18,6 +18,6 @@ public class StoreExit : MonoBehaviour
     }
     public void SceneChange()
     {
-        SceneManager.LoadScene("Mainpage");
+        SceneManager.LoadScene("Mainpage 1");
     }
 }
