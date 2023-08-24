@@ -26,7 +26,7 @@ public class ResultCoin : MonoBehaviour
 
         textResultCoin.text = "" + amountcoin;
 
-        PlayerPrefs.DeleteKey("FinalCoin");
+        PlayerPrefs.DeleteKey("Coin");
     }
 
 
