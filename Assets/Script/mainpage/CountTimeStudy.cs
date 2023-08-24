@@ -4,18 +4,18 @@ using UnityEngine;
 using UnityEngine.UI;
 public class CountTime : MonoBehaviour
 {
-    bool btn_active; //¹öÆ°ÀÌ È°¼ºÈ­ »óÅÂÀÎÁö °Ë»ç.
-    public Text[] text_time; // ½Ã°£À» Ç¥½ÃÇÒ text
-    float time; // ½Ã°£.
-    public float fcounttime;// ½Ã°£ ´©ÀûÀ» À§ÇØ¼­ ÀúÀåÇÏ´Â °÷
+    bool btn_active; //ï¿½ï¿½Æ°ï¿½ï¿½ È°ï¿½ï¿½È­ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ë»ï¿½.
+    public Text[] text_time; // ï¿½Ã°ï¿½ï¿½ï¿½ Ç¥ï¿½ï¿½ï¿½ï¿½ text
+    float time; // ï¿½Ã°ï¿½.
+    public float fcounttime;// ï¿½Ã°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ø¼ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½ï¿½
     public Sprite[] sprites;
     //public Animator animator;
     private void Start()
     {
-        btn_active = false; //¹öÆ°ÀÇ ÃÊ±â »óÅÂ¸¦ false·Î ¸¸µê
+        btn_active = false; //ï¿½ï¿½Æ°ï¿½ï¿½ ï¿½Ê±ï¿½ ï¿½ï¿½ï¿½Â¸ï¿½ falseï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
     }
     public void Btn_Click()
-    { // ¹öÆ° Å¬¸¯ ÀÌº¥Æ®
+    { // ï¿½ï¿½Æ° Å¬ï¿½ï¿½ ï¿½Ìºï¿½Æ®
         if (!btn_active)
         {
             SetTimerOn();
@@ -26,21 +26,22 @@ public class CountTime : MonoBehaviour
         }
     }
     public void SetTimerOn()
-    { // ¹öÆ° È°¼ºÈ­ ¸Þ¼Òµå
+    { // ï¿½ï¿½Æ° È°ï¿½ï¿½È­ ï¿½Þ¼Òµï¿½
         //animator.SetBool("timeron", true);
         btn_active = true;
         GameObject.Find("Timerbutton").GetComponent<Image>().sprite = sprites[1];
     }
 
     public void SetTimerOff()
-    { // ¹öÆ° ºñÈ°¼ºÈ­ ¸Þ¼Òµå
+    { // ï¿½ï¿½Æ° ï¿½ï¿½È°ï¿½ï¿½È­ ï¿½Þ¼Òµï¿½
         //animator.SetBool("timeron", false);
         GameObject.Find("Timerbutton").GetComponent<Image>().sprite = sprites[0];
         fcounttime = time;
         Debug.Log(fcounttime);
+        PlayerPrefs.SetFloat("FCountTime", fcounttime);
         btn_active = false;
     }
-    private void Update() // ¹Ù²î´Â ½Ã°£À» text¿¡ ¹Ý¿µ ÇØ ÁÙ update »ý¸íÁÖ±â
+    private void Update() // ï¿½Ù²ï¿½ï¿½ ï¿½Ã°ï¿½ï¿½ï¿½ textï¿½ï¿½ ï¿½Ý¿ï¿½ ï¿½ï¿½ ï¿½ï¿½ update ï¿½ï¿½ï¿½ï¿½ï¿½Ö±ï¿½
     {
         if (btn_active)
         {
