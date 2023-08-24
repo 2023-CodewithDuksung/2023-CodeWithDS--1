@@ -11,10 +11,10 @@ public class GoToGame: MonoBehaviour
     }
     public void GotoGame1()
     {
-        SceneManager.LoadScene("game1");
+        SceneManager.LoadScene("MiniGame1Intro");
     }
     public void GotoGame2()
     {
-        SceneManager.LoadScene("game2");
+        SceneManager.LoadScene("MiniGame2Intro");
     }
 }
