@@ -3,8 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GoToTimeGame: MonoBehaviour
-{
+public class GoToGame: MonoBehaviour
+{  
+    public void GotoEntrance()
+    {
+        SceneManager.LoadScene("GameEntrance");
+    }
     public void GotoGame1()
     {
         SceneManager.LoadScene("game1");
