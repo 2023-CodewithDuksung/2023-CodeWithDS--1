@@ -44,6 +44,7 @@ public class TimeCheck : MonoBehaviour
         float loadedTimestudy = PlayerPrefs.GetFloat("CounttimeStudy");
         float loadedTimesleep = PlayerPrefs.GetFloat("CounttimeSleep");
         float loadedTimerelax = PlayerPrefs.GetFloat("CounttimeRelax");
+        Debug.Log(loadedTimerelax);
         float loadedTimemeal = PlayerPrefs.GetFloat("CounttimeMeal");
 
         // 시간 값을 정수로 변환하여 물체 생성 개수 결정
