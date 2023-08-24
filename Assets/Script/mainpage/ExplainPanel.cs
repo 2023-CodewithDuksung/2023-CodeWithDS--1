@@ -33,6 +33,10 @@ public class ExplainPanel : MonoBehaviour
                 break;
             case 2:
                 ExpPanel[i].SetActive(false);
+                ExpPanel[i + 1].SetActive(true);
+                break;
+            case 3:
+                ExpPanel[i].SetActive(false);
                 SceneManager.LoadScene("MainPage 0");
                 break;
         }
