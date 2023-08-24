@@ -6,10 +6,8 @@ using UnityEngine.UI;
 
 public class CurrentTime : MonoBehaviour
 {
-
     public Text text_date;
     public Text text_time;
-
     private void Start()
     {
         Init_Time();

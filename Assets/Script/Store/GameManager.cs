@@ -4,6 +4,15 @@ using UnityEngine;
 using System.IO;
 using UnityEngine.UI;
 
+
+[System.Serializable]
+public class Serialzation<T>
+{
+    public Serialzation(List<T> _target) => target = _target;
+    public List<T> target;
+}
+
+
 [System.Serializable]
 public class Item
 {
@@ -21,7 +30,6 @@ public class Item
 public class GameManager : MonoBehaviour
 {
 
-
     public TextAsset ItemDatabase;
     public List<Item> AllItemList, MyItemList, CurItemList;
     public string curType = "Store";
@@ -32,10 +40,8 @@ public class GameManager : MonoBehaviour
     string filePath;
 
 
-
     void Start()
     {
-        //item data -> string으로 변환
         string[] line = ItemDatabase.text.Substring(0, ItemDatabase.text.Length - 1).Split('\n');
         
         for (int i = 0; i <  line.Length; i++)
@@ -45,7 +51,6 @@ public class GameManager : MonoBehaviour
             AllItemList.Add(new Item(row[0], row[1], row[2], row[3], row[4] == "TRUE", row[5] == "TRUE"));
         }
         filePath = Application.persistentDataPath + "/MyItemText.txt";
-
         Load();
     }
 
@@ -132,7 +137,9 @@ public class GameManager : MonoBehaviour
 
     void Save()
     {
-        File.WriteAllText(filePath, "tEst");
+        string jdata = JsonUtility.ToJson(new Serialzation<Item>(MyItemList));
+
+        File.WriteAllText(filePath, jdata);
 
         TabClick(curType);
     }
@@ -146,7 +153,7 @@ public class GameManager : MonoBehaviour
             ResetItemClick(); return;
         }
         string jdata = File.ReadAllText(filePath);
-        
+        MyItemList = JsonUtility.FromJson<Serialzation<Item>>(jdata).target;
 
         TabClick(curType);
     }
